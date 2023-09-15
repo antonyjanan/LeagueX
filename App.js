@@ -94,8 +94,8 @@ const CarListScreen = () => {
         renderItem={({item}) => (
           <TouchableOpacity onPress={() => showImage(item.image)}>
             <Card>
+              <Animated.Text>{item.make}</Animated.Text>
               <Image source={item.image} style={{width: 200, height: 100}} />
-              <Text>{item.make}</Text>
             </Card>
           </TouchableOpacity>
         )}

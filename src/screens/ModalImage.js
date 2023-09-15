@@ -21,7 +21,10 @@ const ModalImage = ({image, closeModal}) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.closeButton} onPress={closeModal}>
-        {/* Add a close button or icon */}
+        <Image
+          style={styles.closeButton}
+          source={require('../assets/close.png')}
+        />
       </TouchableOpacity>
       <Animated.View
         style={[styles.imageContainer, {transform: [{scale: scaleValue}]}]}>
@@ -40,10 +43,12 @@ const styles = StyleSheet.create({
   },
   closeButton: {
     position: 'absolute',
-    top: 20,
+    top: 90,
+    // marginTop: 10,
     right: 20,
     zIndex: 1,
-    // Add styles for your close button or icon
+    height: 20,
+    width: 20,
   },
   imageContainer: {
     width: '80%',
