@@ -108,6 +108,46 @@ const Details = () => {
               },
             ],
           }}>
+          <Animated.Image
+            style={{height: 40, width: 40, borderRadius: 10}}
+            source={require('../assets/block-red.jpg')}
+          />
+          <Animated.Image
+            style={{height: 40, width: 40, borderRadius: 10}}
+            source={require('../assets/Dark-blue.jpg')}
+          />
+          <Animated.Image
+            style={{height: 40, width: 40, borderRadius: 10}}
+            source={require('../assets/Dark-blue.jpg')}
+          />
+          <Animated.Image
+            style={{height: 40, width: 40, borderRadius: 10}}
+            source={require('../assets/Dark-green.jpg')}
+          />
+          <Animated.Image
+            style={{height: 40, width: 40, borderRadius: 10}}
+            source={require('../assets/orange.jpg')}
+          />
+          <Animated.Image
+            style={{height: 40, width: 40, borderRadius: 10}}
+            source={require('../assets/pink.jpg')}
+          />
+        </Animated.View>
+        <Animated.View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            marginTop: 10,
+            opacity: opacity,
+            transform: [
+              {
+                translateX: translateY.interpolate({
+                  inputRange: [0, 1],
+                  outputRange: [50, 0],
+                }),
+              },
+            ],
+          }}>
           <Animated.Text style={{fontSize: 20, fontWeight: '600'}}>
             Get a free service
           </Animated.Text>

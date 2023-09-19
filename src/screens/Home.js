@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useLayoutEffect, useState} from 'react';
 import {
   View,
   Text,
@@ -87,6 +87,10 @@ const Home = ({navigation}) => {
       image: require('../assets/Thar.jpg'),
     },
   ]);
+  const [isReady, setIsReady] = useState(false);
+  useLayoutEffect(() => {
+    setIsReady(true);
+  }, []);
   return (
     <View style={{flex: 1}}>
       <FlatList
@@ -106,7 +110,9 @@ const Home = ({navigation}) => {
                 borderRadius: 30,
               }}
               onPress={() => {
-                navigation.navigate('Details', {image: item});
+                if (isReady) {
+                  navigation.navigate('Details', {image: item});
+                }
               }}>
               <SharedElement id={'image' + item.id}>
                 <View
