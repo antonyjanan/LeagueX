@@ -105,7 +105,6 @@ const Home = ({navigation}) => {
                 backgroundColor: '#e6e6e6',
                 borderRadius: 30,
               }}
-              opa
               onPress={() => {
                 navigation.navigate('Details', {image: item});
               }}>
@@ -128,20 +127,26 @@ const Home = ({navigation}) => {
                       {item.make}
                     </Text>
                     <Text
-                      style={{fontSize: 14, fontWeight: '500', marginLeft: 20}}>
+                      style={{
+                        fontSize: 14,
+                        fontWeight: '500',
+                        marginLeft: 20,
+                      }}>
                       {item.model}
                     </Text>
                   </View>
                   <View>
-                    <Image
-                      source={item.image}
-                      style={{
-                        width: Item_Width,
-                        height: Item_Height,
-                        margin: 20,
-                      }}
-                      resizeMode="cover"
-                    />
+                    <SharedElement id={'image' + item.id}>
+                      <Image
+                        source={item.image}
+                        style={{
+                          width: Item_Width,
+                          height: Item_Height,
+                          margin: 20,
+                        }}
+                        resizeMode="cover"
+                      />
+                    </SharedElement>
                   </View>
                 </View>
               </SharedElement>
