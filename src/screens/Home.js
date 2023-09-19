@@ -12,6 +12,8 @@ import {
 import {SharedElement} from 'react-navigation-shared-element';
 
 const {height, width} = Dimensions.get('window');
+const Item_Height = height * 0.2;
+const Item_Width = width * 0.4;
 const Home = ({navigation}) => {
   const [data, setData] = useState([
     {
@@ -98,11 +100,12 @@ const Home = ({navigation}) => {
           return (
             <TouchableOpacity
               style={{
-                width: '100%',
+                width: width,
                 marginBottom: 10,
                 backgroundColor: '#e6e6e6',
                 borderRadius: 30,
               }}
+              opa
               onPress={() => {
                 navigation.navigate('Details', {image: item});
               }}>
@@ -133,11 +136,11 @@ const Home = ({navigation}) => {
                     <Image
                       source={item.image}
                       style={{
-                        width: 120,
-                        height: 100,
+                        width: Item_Width,
+                        height: Item_Height,
                         margin: 20,
                       }}
-                      resizeMode="contain"
+                      resizeMode="cover"
                     />
                   </View>
                 </View>
