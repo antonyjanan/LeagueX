@@ -109,27 +109,27 @@ const Details = () => {
             ],
           }}>
           <Animated.Image
-            style={{height: 40, width: 40, borderRadius: 10}}
+            style={styles.animatedColors}
             source={require('../assets/block-red.jpg')}
           />
           <Animated.Image
-            style={{height: 40, width: 40, borderRadius: 10}}
+            style={styles.animatedColors}
             source={require('../assets/Dark-blue.jpg')}
           />
           <Animated.Image
-            style={{height: 40, width: 40, borderRadius: 10}}
+            style={styles.animatedColors}
             source={require('../assets/Dark-blue.jpg')}
           />
           <Animated.Image
-            style={{height: 40, width: 40, borderRadius: 10}}
+            style={styles.animatedColors}
             source={require('../assets/Dark-green.jpg')}
           />
           <Animated.Image
-            style={{height: 40, width: 40, borderRadius: 10}}
+            style={styles.animatedColors}
             source={require('../assets/orange.jpg')}
           />
           <Animated.Image
-            style={{height: 40, width: 40, borderRadius: 10}}
+            style={styles.animatedColors}
             source={require('../assets/pink.jpg')}
           />
         </Animated.View>
@@ -192,6 +192,12 @@ const styles = StyleSheet.create({
     fontWeight: '800',
     marginLeft: 20,
     marginTop: 10,
+  },
+  animatedColors: {
+    marginTop: 10,
+    height: 40,
+    width: 40,
+    borderRadius: 10,
   },
 });
 

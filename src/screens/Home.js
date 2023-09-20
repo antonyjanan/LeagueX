@@ -114,48 +114,48 @@ const Home = ({navigation}) => {
                   navigation.navigate('Details', {image: item});
                 }
               }}>
-              <SharedElement id={'image' + item.id}>
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    justifyContent: 'space-between',
-                    flex: 1,
-                  }}>
-                  <View style={{flexDirection: 'column'}}>
-                    <Text
-                      style={{
-                        color: 'black',
-                        fontSize: 16,
-                        fontWeight: '800',
-                        marginLeft: 20,
-                        marginTop: 10,
-                      }}>
-                      {item.make}
-                    </Text>
-                    <Text
-                      style={{
-                        fontSize: 14,
-                        fontWeight: '500',
-                        marginLeft: 20,
-                      }}>
-                      {item.model}
-                    </Text>
-                  </View>
-                  <View>
-                    <SharedElement id={'image' + item.id}>
-                      <Image
-                        source={item.image}
-                        style={{
-                          width: Item_Width,
-                          height: Item_Height,
-                          margin: 20,
-                        }}
-                        resizeMode="cover"
-                      />
-                    </SharedElement>
-                  </View>
+              {/* <SharedElement id={'image' + item.id}> */}
+              <View
+                style={{
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                  flex: 1,
+                }}>
+                <View style={{flexDirection: 'column'}}>
+                  <Text
+                    style={{
+                      color: 'black',
+                      fontSize: 16,
+                      fontWeight: '800',
+                      marginLeft: 20,
+                      marginTop: 10,
+                    }}>
+                    {item.make}
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: 14,
+                      fontWeight: '500',
+                      marginLeft: 20,
+                    }}>
+                    {item.model}
+                  </Text>
                 </View>
-              </SharedElement>
+                <View>
+                  <SharedElement id={'image' + item.id}>
+                    <Image
+                      source={item.image}
+                      style={{
+                        width: Item_Width,
+                        height: Item_Height,
+                        margin: 20,
+                      }}
+                      resizeMode="cover"
+                    />
+                  </SharedElement>
+                </View>
+              </View>
+              {/* </SharedElement> */}
             </TouchableOpacity>
           );
         }}
