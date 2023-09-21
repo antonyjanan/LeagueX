@@ -9,7 +9,6 @@ import {
   Animated,
 } from 'react-native';
 import {useNavigation, useRoute} from '@react-navigation/native';
-import {SharedElement} from 'react-navigation-shared-element';
 
 const Details = () => {
   const navigation = useNavigation();
@@ -40,44 +39,40 @@ const Details = () => {
       <ScrollView>
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
           <View>
-            <SharedElement id={'make' + route.params.make}>
-              <Animated.Text
-                style={[
-                  styles.animatedText,
-                  {
-                    transform: [
-                      {
-                        translateY: translateY.interpolate({
-                          inputRange: [0, 1],
-                          outputRange: [50, 0],
-                        }),
-                      },
-                    ],
-                    opacity: opacity,
-                  },
-                ]}>
-                {route.params.image.make}
-              </Animated.Text>
-            </SharedElement>
-            <SharedElement id={'model' + route.params.model}>
-              <Animated.Text
-                style={[
-                  styles.animatedText,
-                  {
-                    transform: [
-                      {
-                        translateY: translateY.interpolate({
-                          inputRange: [0, 1],
-                          outputRange: [50, 0],
-                        }),
-                      },
-                    ],
-                    opacity: opacity,
-                  },
-                ]}>
-                {route.params.image.model}
-              </Animated.Text>
-            </SharedElement>
+            <Animated.Text
+              style={[
+                styles.animatedText,
+                {
+                  transform: [
+                    {
+                      translateY: translateY.interpolate({
+                        inputRange: [0, 1],
+                        outputRange: [50, 0],
+                      }),
+                    },
+                  ],
+                  opacity: opacity,
+                },
+              ]}>
+              {route.params.image.make}
+            </Animated.Text>
+            <Animated.Text
+              style={[
+                styles.animatedText,
+                {
+                  transform: [
+                    {
+                      translateY: translateY.interpolate({
+                        inputRange: [0, 1],
+                        outputRange: [50, 0],
+                      }),
+                    },
+                  ],
+                  opacity: opacity,
+                },
+              ]}>
+              {route.params.image.model}
+            </Animated.Text>
           </View>
           <Animated.View style={{opacity: opacity}}>
             <View>
@@ -90,9 +85,21 @@ const Details = () => {
             </View>
           </Animated.View>
         </View>
-        <SharedElement id={'image' + route.params.image.id}>
-          <Image source={route.params.image.image} resizeMode="cover" />
-        </SharedElement>
+        <Animated.Image
+          source={route.params.image.image}
+          resizeMode="cover"
+          style={{
+            opacity: opacity,
+            transform: [
+              {
+                translateY: translateY.interpolate({
+                  inputRange: [0, 1],
+                  outputRange: [50, 0],
+                }),
+              },
+            ],
+          }}
+        />
         <Animated.View
           style={{
             flexDirection: 'row',
