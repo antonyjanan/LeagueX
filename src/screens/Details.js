@@ -54,7 +54,7 @@ const Details = () => {
                   opacity: opacity,
                 },
               ]}>
-              {route.params.image.make}
+              {route.params.item.make}
             </Animated.Text>
             <Animated.Text
               style={[
@@ -71,7 +71,7 @@ const Details = () => {
                   opacity: opacity,
                 },
               ]}>
-              {route.params.image.model}
+              {route.params.item.model}
             </Animated.Text>
           </View>
           <Animated.View style={{opacity: opacity}}>
@@ -86,7 +86,7 @@ const Details = () => {
           </Animated.View>
         </View>
         <Animated.Image
-          source={route.params.image.image}
+          source={route.params.item.image}
           resizeMode="cover"
           style={{
             opacity: opacity,
